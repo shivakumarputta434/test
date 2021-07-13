@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}post{% endblock %}
+
+{% block body %}
+    <h2>create post</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="posttitle" placeholder="post title">
+        <br><br>
+        <input type="text" name="postbody" placeholder="post title">
+        <br><br>
+        <input type="submit" name="submit" value="post">
+    </form>
+
+
+{% endblock %}

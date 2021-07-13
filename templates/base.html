@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <h1>My Site</h1>
+
+    <a href="/">Home</a>
+    <span>/</span>
+
+    {% if current_user %}
+        <a href="{% url 'logout' %}">Logout</a>
+        <hr>
+        <h2>Welcome <span style="color: dodgerblue;">{{current_user}}</span>!</h2>
+        <h3>{{stuid}}</h3>
+        <h3>{{stumarks}}</h3>
+    <button><a href="{% url 'post' %}">create your post</a></button>
+    <hr>
+    <h2>your post are here</h2>
+{% for post in post.stupost.all %}
+    <div style="background-color:red;">
+        <h2>{{post.post_title}}</h2>
+        <h4>{{post.post_body}}</h4>
+        <h4>{{post.id}}</h4>
+        <button><a href="{% url 'updatepost' id=post.id %}">update your post</a></button>
+        <button><a href="{% url 'deletepost' id=post.id %}">delete your post</a></button>
+    </div><br><br>
+
+    {% endfor %}
+    <hr>
+    <h1>your friend posts</h1>
+{% for friendlist in friendlist %}
+    <div style="background-color:green;">
+        <h2>{{friendlist.friendname}}</h2>
+        <h2>{{friendlist.friendid}}</h2>
+
+    </div><br><br>
+
+    {% endfor %}
+
+    <hr>
+    <h1>friend posts</h1>
+    {% for friendpost in friendpost.stupost.all %}
+    <div style="background-color:blue;">
+        <h2>{{friendpost.post_title}}</h2>
+
+    </div><br><br>
+
+    {% endfor %}
+
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+
+        <hr>
+        <h2>Login to access this website!</h2>
+    {% endif %}
+
+
+    {% block body %}{% endblock %}
+</body>
+</html>

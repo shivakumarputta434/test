@@ -1,0 +1,31 @@
+
+{% extends 'home.html' %}
+{% block title %}
+iftest
+
+{% endblock %}
+{% block content %}
+
+<h1>iftest</h1>
+<button><a href="{% url 'signin' %}">Sign in</a></button>
+<hr>
+<h1 style="color:red;">{{error}}</h1>
+<form method="post">
+    {% csrf_token %}
+    <label>company name</label><br>
+    <input type="text" name="name"><br><br>
+    <label>number</label><br>
+    <input type="text" name="number"><br><br>
+    <input type="submit" value="register">
+</form>
+<br><br>
+<hr>
+<h1>company list</h1><br>
+{% for company in company %}
+<p>{{company.name}}</p>
+<p>{{company.randnum}}</p>
+<p>{{company.number}}</p><br>
+
+{% endfor %}
+
+{% endblock %}

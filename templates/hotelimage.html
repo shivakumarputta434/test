@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+{% load static %}
+
+    <script src="{% static '/jquery/ajax.js' %}"></script>
+
+</head>
+<body>
+<p>thi is text</p>
+<button id="but">show table</button>
+<button onclick="msg()">show</button>
+
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+    <tbody id="tbody">
+  <tr>
+    <td>Alfreds </td>
+    <td>Maria </td>
+    <td>Germany</td>
+  </tr>
+    </tbody>
+
+</table>
+
+<h2>{{hotelcount}}</h2>
+
+
+<button><a href="/hotelimage">hotelimage</a></button>
+<button><a href="/hotelapiall">hotelimage</a></button>
+<button><a href="/jointable">hotelimage</a></button>
+
+</body>
+</html>
