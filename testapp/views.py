@@ -7,7 +7,7 @@ from django.db import connection
 
 
 
-
+#this is new commit
 
 def jointable(request):
     #cursor=connection.cursor()
