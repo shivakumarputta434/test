@@ -8,6 +8,7 @@ from django.db import connection
 
 
 #this is new commit
+#this is branch commit
 
 def jointable(request):
     #cursor=connection.cursor()
